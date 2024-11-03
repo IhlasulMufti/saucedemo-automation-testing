@@ -17,7 +17,8 @@ Feature: Login
     Then Alert with message "<error_message>" will appear
 
     Examples:
-      | username      | password     | error_message                                               |
-      |               | secret_sauce | Username is required                                        |
-      | standard_user |              | Password is required                                        |
-      | invalid       | invalid      | Username and password do not match any user in this service |
+      | username        | password     | error_message                                               |
+      |                 | secret_sauce | Username is required                                        |
+      | standard_user   |              | Password is required                                        |
+      | invalid         | invalid      | Username and password do not match any user in this service |
+      | locked_out_user | secret_sauce | Sorry, this user has been locked out.                       |

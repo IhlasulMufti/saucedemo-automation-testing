@@ -32,7 +32,7 @@ public class ProductTest {
 
     @And("I am on the product page")
     public void i_am_on_the_product_page() {
-        Assert.assertEquals(loginPage.getTxtProduct(), "Products");
+        Assert.assertEquals(loginPage.getTxtPageTitle(), "Products");
         Assert.assertEquals(driver.getCurrentUrl(), "https://www.saucedemo.com/inventory.html");
         extentTest.log(LogStatus.PASS, "I am on the product page");
     }
@@ -41,6 +41,7 @@ public class ProductTest {
     public void i_click_add_to_cart_button_for_two_product() {
         for (int i = 0; i < 2; i++) {
             productsPage.clickProductButton(i);
+            Assert.assertEquals(productsPage.getTxtProductButton(i), "Remove");
         }
         extentTest.log(LogStatus.PASS, "I click add to cart button for two product");
     }
@@ -48,6 +49,8 @@ public class ProductTest {
     @And("I click cart button")
     public void i_click_cart_button() {
         productsPage.setCartButton();
+        Assert.assertEquals(driver.getCurrentUrl(), "https://www.saucedemo.com/cart.html");
+        Assert.assertEquals(loginPage.getTxtPageTitle(), "Your Cart");
         extentTest.log(LogStatus.PASS, "I click cart button");
     }
 

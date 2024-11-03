@@ -28,8 +28,8 @@ public class CheckoutTest {
 
     @And("I enter firstname {string}, lastname {string} and postal code {string}")
     public void i_enter_firstname_lastname_and_postal_code(String firstName, String lastName, String postalCode){
-        Assert.assertTrue(checkoutPage.getPageTitle().contains("Your Information"));
         checkoutPage.insertInformation(firstName, lastName, postalCode);
+        Assert.assertTrue(checkoutPage.getPageTitle().contains("Your Information"));
         extentTest.log(
                 LogStatus.PASS,
                 "I enter firstname "+firstName+", lastname "+lastName+" and postal code "+postalCode

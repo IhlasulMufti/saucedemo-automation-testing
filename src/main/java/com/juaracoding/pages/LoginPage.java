@@ -26,7 +26,7 @@ public class LoginPage {
     private WebElement btnLogin;
 
     @FindBy(xpath = "//span[@class='title']")
-    private WebElement txtProduct;
+    private WebElement txtPageTitle;
 
     @FindBy(xpath = "//h3[@data-test='error']")
     private WebElement txtInvalidUser;
@@ -49,8 +49,8 @@ public class LoginPage {
         btnLogin.click();
     }
 
-    public String getTxtProduct() {
-        return txtProduct.getText();
+    public String getTxtPageTitle() {
+        return txtPageTitle.getText();
     }
 
     public String getTxtInvalidUser() {

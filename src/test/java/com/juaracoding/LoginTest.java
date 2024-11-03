@@ -43,7 +43,7 @@ public class LoginTest {
 
     @Then("I should be redirected to product page")
     public void i_should_be_redirected_to_product_page(){
-        Assert.assertEquals(loginPage.getTxtProduct(), "Products");
+        Assert.assertEquals(loginPage.getTxtPageTitle(), "Products");
         Assert.assertEquals(driver.getCurrentUrl(), "https://www.saucedemo.com/inventory.html");
         extentTest.log(LogStatus.PASS, "I should be redirected to product page");
     }
